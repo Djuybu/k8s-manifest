@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubernates-spring
+  labels:
+    app: kubernates-spring
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kubernates-spring
+  template:
+    metadata:
+      labels:
+        app: kubernates-spring
+    spec:
+      containers:
+        - name: kubernates-spring
+          image: djuybu/kubernates-spring:latest  # Thay thế bằng image của bạn
+          ports:
+            - containerPort: 8080
